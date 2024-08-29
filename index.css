@@ -1,0 +1,295 @@
+
+
+body,html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+@media (max-width: 1200px){
+    .glass{
+        width: 80% !important;
+    }
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass{
+    position: relative;
+    display: flex;
+    width: 55%;
+    height: 600px;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: .4px solid #C9CAF3;
+    padding: 1.4rem .6rem;
+    box-shadow:  5px 5px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 1.5s ease;
+}
+
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    transition: all 1.5s ease;
+}
+
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 2rem;
+    color: white;
+    background-position: center;
+    background-size: cover;
+    transition: all 1.2s ease;
+}
+
+.box-info{
+    color: #FDFBFD;
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    width: 100%;
+    transition: all 1.2s ease;
+}
+
+.box-info > div{
+    width: 240px;
+    position: relative;
+    left: 0;
+}
+
+.register, .login{
+    width: 50%;
+    padding: 4rem;
+    color: #FDFBFD;
+    transition: all 1.1s ease;
+}
+
+.login a, .register a, .box-info a{
+    color: #FDFBFD;
+    text-decoration: none;
+}
+
+.title{
+    margin: 0;
+    text-align: center;
+}
+
+.login-form{
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.custom-input{
+    display: block;
+    width: 100%;
+    background: white;
+    color: #0F131F;
+    border: none;
+    padding: 0.6rem 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.custom-input:focus-visible{
+    outline: 2px solid #00a6e1;
+    background: white;
+}
+
+label{
+    display: inline-block;
+    margin-bottom: .27rem;
+}
+
+.button{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 4rem;
+}
+
+.register-button{
+    background: linear-gradient(90deg, #31f4ff, #4db5f8);
+}
+
+.login-button{
+    background: linear-gradient(90deg, #0b81ba, #B93A6B);
+}
+
+.middle-icon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 5%;
+    left: 47.5%;
+    border-radius: 50%;
+    box-shadow: 12px 12px 32px rgba(0,0,0,0.1),
+        -5px -5px 15px white;
+    background: white;
+    padding: .7rem;
+    cursor: pointer;
+    transition: all 1.3s ease;
+}
+
+.middle-icon .icon{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: all 1.5s ease;
+    filter: invert(100%);
+}
+
+/* --------------------- Night ----------------------- */
+
+.main.night .glass{
+    background: rgba(0,0,155,0.04);
+}
+
+.main.night .background{
+    background-image: url('./assets/bg-moon.png');
+}
+
+.main.night .register{
+    transform: translateX(-100%);
+}
+
+.main.night .cover{
+    background-image: url('./assets/spaceman.jpg');
+    transform: translateX(0%);
+}
+
+.main.night .box-info{
+    transform: translateX(0%);
+}
+
+.night-box-info{
+    padding-left: 2rem;
+}
+
+.main.night .day-box-info{
+    display: none;
+}
+
+.main.night .middle-icon{
+    background: #F1DD18;
+    box-shadow: 1px 0px 14px 4px #F1DD18;
+}
+
+.main.night .middle-icon .icon{
+    background-image: url('./assets/sun-icon.png');
+}
+
+/*----------------------------------------------- */
+
+/*------------------ Day----------------------------- */
+
+.main.day .glass{
+    background: rgba(0,110,0,0.14);
+}
+
+.main.day .background{
+    background-image: url('./assets/bg-sun.png');
+}
+
+.main.day .login{
+    transform: translateX(100%);
+}
+
+.main.day .cover{
+    background-image: url('./assets/clouds.jpg');
+    transform: translateX(100%);
+}
+
+.main.day .box-info{
+    transform: translateX(52%);
+}
+
+.day-box-info{
+    text-align: end;
+    padding-right: 2rem;
+}
+
+.main.day .night-box-info{
+    display: none;
+}
+
+.main.day .middle-icon{
+    background: #000000 !important;
+    box-shadow: 1px 0px 14px #000000;
+}
+
+.main.day .middle-icon .icon{
+    background-image: url('./assets/moon-icon.png');
+}
+
+
+/*----------------------------------------------- */
+
+.star{
+    position: absolute;
+    transform: rotate(45deg);
+    background: linear-gradient(100deg, #ffffff, #DFDFD4);
+    box-shadow: 0 0 10px rgba(255,255,255,1),
+    0 0 20px rgba(255,255,255,1),
+    0 0 30px rgba(255,255,255,1),
+    0 0 40px #ff00de, 0 0 70px #ff00de,
+    0 0 80px #ff00de,
+    0 0 100px #ff00de;
+}
+
+.mb-2{
+    margin-bottom: .5rem;
+}
+
+.mb-3{
+    margin-bottom: 1rem;
+}
+
+.text-end{
+    text-align: end;
+}
+
+.twinkle{
+    animation-name: twinkle;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes twinkle{
+    0% { opacity: 1.0;}
+    50% { opacity: 0.0;}
+    100% { opacity: 1.0;}
+}
